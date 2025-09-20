@@ -1,13 +1,61 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Space+Grotesk:wght@300;400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900;
+    background-image: 
+      radial-gradient(circle at 5% 10%, rgba(255, 61, 0, 0.05) 0%, transparent 20%),
+      radial-gradient(circle at 95% 80%, rgba(255, 204, 0, 0.05) 0%, transparent 20%);
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .section-title {
+    @apply font-montserrat font-black text-4xl md:text-5xl uppercase mb-12 relative inline-block;
+  }
+  
+  .section-title::after {
+    content: "";
+    @apply absolute -bottom-4 left-0 w-2/3 h-1 bg-accent transition-all duration-500;
+  }
+  
+  .section-title:hover::after {
+    @apply w-full;
+  }
+  
+  .skill-card {
+    @apply bg-white p-6 md:p-8 border-l-4 border-accent shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+  
+  .skill-title {
+    @apply font-montserrat font-bold text-xl mb-4 flex items-center gap-2;
+  }
+  
+  .skill-list li {
+    @apply mb-2 pl-5 relative;
+  }
+  
+  .skill-list li::before {
+    content: "▹";
+    @apply absolute left-0 text-accent font-bold;
+  }
+  
+  .timeline-item {
+    @apply mb-12 pl-8 relative border-l-4 border-accent;
+  }
+  
+  .timeline-date {
+    @apply font-bold text-accent mb-2 inline-block px-4 py-1 bg-orange-100 rounded-full;
+  }
+  
+  .timeline-title {
+    @apply font-montserrat font-bold text-2xl mb-2;
+  }
+  
+  .project-card {
+    @apply bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300;
+  }
 }
