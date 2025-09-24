@@ -1,3 +1,4 @@
+import React from 'react';
 const Education: React.FC = () => {
     return(
         <section id="eduaction" className="py-20 relative">
