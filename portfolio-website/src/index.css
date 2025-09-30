@@ -59,3 +59,11 @@
     @apply bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure sections have proper spacing */
+section {
+  scroll-margin-top: 100px;
+}
